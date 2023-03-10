@@ -2,7 +2,9 @@
 html {
   --size-header: 15vh;
   --size-icon-container: 80px;
+  --size-small-icon-container: 40px;
   --size-icon: 50px;
+  --size-small-icon: 20px;
 }
 
 /* SECTIONS */
@@ -35,6 +37,22 @@ header {
 .icon-button > img {
   height: var(--size-icon);
   width: var(--size-icon);
+}
+
+.small-icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 100%;
+  height: var(--size-small-icon-container);
+  width: var(--size-small-icon-container);
+  cursor: pointer; 
+}
+
+.small-icon-button > img {
+  height: var(--size-small-icon);
+  width: var(--size-small-icon);
 }
 
 /* ADD MODAL */
@@ -88,4 +106,40 @@ header {
 
 #add-form-button {
   margin-top: 20px;
+}
+
+/* SIDENAV */
+#side {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: whitesmoke; 
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: width 0.5s;
+  -webkit-transition: width 0.5s;
+}
+
+#side-header {
+  display: flex;
+  justify-content: flex-end;
+  height: var(--size-header);
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#side-content {
+  padding: 5%;
+}
+
+.word-item {
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

@@ -16,7 +16,7 @@
 
 <body>
   <header>
-    <div class="icon-button">
+    <div id="menu-button" class="icon-button">
       <image alt="Menu button" src="./assets/menu-icon.svg" />
     </div>
 
@@ -45,7 +45,21 @@
     </div>
   </div>
 
-  <script src="./js/events.js"></script>
+  <div id="side">
+    <div id="side-header">
+      <div class="icon-button" id="side-close">
+        <image alt="Close modal button" src="./assets/close-icon.svg" />
+      </div>
+    </div>
+
+    <div id="side-content">
+      <h2>My words</h2>
+
+      <div id="words-list"></div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
