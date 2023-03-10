@@ -83,3 +83,5 @@ function displayListOfWords(words) {
     container.appendChild(line);
   });
 }
+
+// QUESTION LOGIC
