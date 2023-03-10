@@ -22,10 +22,30 @@
 
     <h1>Learn english words</h1>
 
-    <div class="icon-button">
+    <div id="add-button" class="icon-button">
       <image src="./assets/add-icon.svg" />
     </div>
   </header>
+
+  <div id="add-modal" class="modal">
+    <div class="modal-content">
+      <span id="add-modal-close" class="close">&times;</span>
+
+      <form id="modal-form" autocomplete="off">
+        <div id="modal-form-field">
+          <label for="english">English word: </label>
+          <input type="text" id="english" name="english">
+        </div>
+        <div id="modal-form-field">
+          <label for="translation">Translation: </label>
+          <input type="text" id="translation" name="translation">
+        </div>
+        <button id="add-form-button" type="submit">Validate</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/events.js"></script>
 </body>
 
 </html>
