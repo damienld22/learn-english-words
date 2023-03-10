@@ -3,9 +3,13 @@ const STORAGE_KEY = 'words';
 const SIDE_WITH = '40vw';
 
 let words = getElementsFromStorage();
+let toTestsWords = shuffle([...words]);
 
 // BOOTSTRAP
-displayListOfWords(words);
+displayListOfWords();
+
+displayNextWorkToTest();
+
 
 // Add word button
 document.getElementById('add-button').addEventListener('click', () => {
@@ -61,7 +65,7 @@ document.getElementById('side-close').addEventListener('click', () => {
   document.getElementById('menu-button').style.opacity = 1;
 });
 
-function displayListOfWords(words) {
+function displayListOfWords() {
   const container = document.getElementById('words-list');
 
   container.replaceChildren();
@@ -85,3 +89,38 @@ function displayListOfWords(words) {
 }
 
 // QUESTION LOGIC
+function shuffle(array) {
+  return array.sort((a, b) => 0.5 - Math.random());
+}
+
+function displayNextWorkToTest() {
+  const toTestWord = toTestsWords.pop();
+  const wordNode = document.getElementById('word-value');
+
+  if (toTestWord) {
+    const flipButton = document.getElementById('flip-button');
+    const flipAction = () => {
+      if (wordNode.textContent === toTestWord.english) {
+        wordNode.textContent = toTestWord.translation;
+      } else if (wordNode.textContent === toTestWord.translation) {
+        wordNode.textContent = toTestWord.english;
+      }
+    }
+
+    flipButton.addEventListener('click', flipAction);
+
+    document.getElementById('ok-button').addEventListener('click', () => {
+      flipButton.removeEventListener('click', flipAction);
+      displayNextWorkToTest();
+    }, { once: true });
+
+    document.getElementById('ko-button').addEventListener('click', () => {
+      flipButton.removeEventListener('click', flipAction);
+      displayNextWorkToTest();
+    }, { once: true });
+
+    wordNode.textContent = toTestWord.english;
+  } else {
+    wordNode.textContent = 'No word. Please refresh.'
+  }
+}
