@@ -1,5 +1,37 @@
+/* VARIABLES */
+html {
+  --size-header: 15vh;
+  --size-icon-container: 80px;
+  --size-icon: 50px;
+}
+
+/* SECTIONS */
 html {
   width: 100vw;
   height: 100vh;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  height: var(--size-header);
+  align-items: center ;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* COMPONENTS */
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 100%;
+  height: var(--size-icon-container);
+  width: var(--size-icon-container);
+}
+
+.icon-button > img {
+  height: var(--size-icon);
+  width: var(--size-icon);
+}
