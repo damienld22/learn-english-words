@@ -10,6 +10,7 @@ displayListOfWords(words);
 // Add word button
 document.getElementById('add-button').addEventListener('click', () => {
   document.getElementById('add-modal').style.display = 'block';
+  document.getElementById('english').focus();
 });
 
 document.getElementById('add-modal-close').addEventListener('click', () => {
